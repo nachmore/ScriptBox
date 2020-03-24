@@ -5,7 +5,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode, RegEx
 
 ^!y::Chime_Toggle_Mute()
-
+^!u::Chime_Show_Meeting_Window()
 
 Chime_Toggle_Mute() {
 
@@ -28,6 +28,15 @@ Chime_Toggle_Mute() {
 
   }
  
+}
+
+Chime_Show_Meeting_Window() {
+
+  chime_id := Chime_Get_Meeting_Window()
+
+  if (chime_id > 0) {
+    WinActivate ahk_id %chime_id%
+  }
 }
 
 Chime_Get_Meeting_Window() {
