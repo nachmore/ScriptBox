@@ -9,7 +9,10 @@ SetTitleMatchMode, RegEx
 
 Chime_Toggle_Mute() {
 
-  chime_id := Chime_Get_Meeting_Window()
+  ; This hotkey works on the popped out video window, so search for it
+  ; immediately (it's actually better when that one is returned because it's
+  ; already displaying on top of everything)
+  chime_id := Chime_Get_Meeting_Window(false)
 
   if (chime_id > 0) {
     ; remember the currently active window
@@ -37,6 +40,9 @@ Chime_Show_Meeting_Window() {
   }
 }
 
+; Retrieve id of the chime meeting window
+; ignore_video - true: try to avoid returning the video window
+;                Note: Will still fallback to (false) if (true) doesn't find any windows
 Chime_Get_Meeting_Window(ignore_video := true) {
   ; Since meeting title can be arbitrary we need to iterate through Chime windows
   ; Unfortunately the class id keeps changing *and* there are a number of hidden windows
