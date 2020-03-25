@@ -25,9 +25,7 @@ Chime_Toggle_Mute() {
 
     ; reactive the previously active window
     WinActivate ahk_id %active_id%
-
   }
- 
 }
 
 Chime_Show_Meeting_Window() {
@@ -39,7 +37,7 @@ Chime_Show_Meeting_Window() {
   }
 }
 
-Chime_Get_Meeting_Window() {
+Chime_Get_Meeting_Window(ignore_video := true) {
   ; Since meeting title can be arbitrary we need to iterate through Chime windows
   ; Unfortunately the class id keeps changing *and* there are a number of hidden windows
   ; which AHK does not realize are hidden, so:
@@ -64,10 +62,17 @@ Chime_Get_Meeting_Window() {
     ; Note: This may be the webcam strip if it is popped out, but that's fine because
     ;       Ctrl+Y works fine on that window as well
     if (found_text == "" and cur_title != "") {
-      return cur_id
+
+      ; if the window is titled "Video" then it is most likely the popped out Video 
+      ; window, so ignore it, unless requested not to
+      if (!ignore_video or (ignore_video and cur_title != "Video")) {
+        return cur_id
+      }
     }
   }
 
-  return 0
+  ; We couldn't find a meeting window, so search again this time including the Video window
+  ; This accounts for the edge case where the meeting is titled "Video"
+  return Chime_Get_Meeting_Window(false)
 }
 
