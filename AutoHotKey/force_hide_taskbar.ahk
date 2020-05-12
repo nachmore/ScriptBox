@@ -5,6 +5,7 @@
 SetTitleMatchMode, 2 ;2: A window's title can contain WinTitle anywhere inside it to be a match.
 Gui +LastFound
 
+; if this is true, the taskbar will be auto hidden when powerpoint is in presentation mode
 auto_hide_powerpoint := true
 
 if (auto_hide_powerpoint) {
@@ -61,7 +62,7 @@ HideTaskbars() {
 }
 
 ; this isn't Show because if the taskbar is hidden with auto-hide it will remain off screen
-; "hidden" but the taskbar window state will go back to visible so that it can be show when needed
+; "hidden" but the taskbar window state will go back to visible so that it can be shown when needed
 UnHideTaskbars() {
 		WinShow, ahk_class Shell_TrayWnd
 		WinShow, Start ahk_class Button ; doesn't seem to be needed, but just in case be nice and return to the original state :)
