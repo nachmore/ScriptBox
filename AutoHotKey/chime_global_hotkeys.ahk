@@ -4,6 +4,10 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode, RegEx
 
+#include ..\..\KeyboardSpecificAutoHotkey\KeyboardSpecificHotkey.ahk
+
+; KEYBD_RegisterHotkey(52, 81, 0, "Chime_Toggle_Mute")
+
 ^!y::Chime_Toggle_Mute()
 ^!u::Chime_Show_Meeting_Window()
 
