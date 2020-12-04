@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Close Quip Desktop App redirect
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Quip's redirect opens Quip links in the Desktop app but leaves the tab open. This closes them after 5 seconds.
 // @author       Oren Nachman
 // @include      /^https?://.*?quip.*?web-desktop-app-redirect\?/
@@ -114,20 +114,25 @@
   function injectTimerCSS() {
     const style = document.createElement("style");
     style.textContent = `
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300');
 
 #container {
-  width: 300px;
+  width: 150px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  top: -100px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
 }
 
 #playpause-container {
-  width: 50px;
+  width: 30px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#circle {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .play {
@@ -137,14 +142,14 @@
 
 .timer-face {
   position: relative;
-  top: -205px;
+  top: -115px;
   text-align: center;
 }
 
 .display-remain-time {
-  font-family: 'Roboto';
+  font-family: "Avenir Web",Sans-Serif;
   font-weight: 100;
-  font-size: 65px;
+  font-size: 30px;
   color: #F7958E;
 }
 
@@ -155,6 +160,7 @@
   margin-top: 10px;
   width: 50px;
   height: 50px;
+  left: -10px;
   position: relative;
 }
 
@@ -212,8 +218,8 @@
   function injectTimerHTML() {
     document.body.innerHTML += `
     <div id="container">
-      <div class="circle">
-        <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+      <div id="circle">
+        <svg width="150" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(110,110)">
             <circle r="100" class="e-c-base"/>
             <g transform="rotate(-90)">
