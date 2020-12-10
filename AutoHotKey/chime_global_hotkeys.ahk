@@ -54,7 +54,8 @@ Chime_Get_Meeting_Window(ignore_video := true) {
 
   ; Get all chime windows
   WinGet, chime_window_list, List, ahk_exe Chime.exe ahk_class i)Chime
-; iterate through the windows
+
+  ; iterate through the windows
   Loop, %chime_window_list%
   {
     cur_id := chime_window_list%A_Index%
@@ -80,6 +81,11 @@ Chime_Get_Meeting_Window(ignore_video := true) {
       }
     }
   }
+
+  ; if we couldn't find a meeting window, and we were already doing a wide search (i.e.
+  ; not ignoring the video window) then we couldn't find a Chime meeting, so return
+  if (!ignore_video)
+    return
 
   ; We couldn't find a meeting window, so search again this time including the Video window
   ; This accounts for the edge case where the meeting is titled "Video"
