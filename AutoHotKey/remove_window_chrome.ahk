@@ -5,7 +5,7 @@
 #SingleInstance, force
 
 ; Ctrl + Shift
-^+a::
+^+q::
 
   WS_CAPTION := 0xC00000
 
