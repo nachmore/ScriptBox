@@ -1,0 +1,26 @@
+{
+    "name": "AWS Theme (Not Official)",
+    "manifest_version": 2,
+    "version": "3.4",
+    "theme": {
+        "images": {
+            "theme_frame": "aws_header.png"
+        },
+        "colors": {
+            "frame": "rgba(35, 47, 62, 1)",
+            "tab_text": "rgba(255, 153, 0, 1)",
+            "tab_background_text": "rgba(255, 255, 255, 1)",
+            "toolbar": "rgba(35, 47, 62, 0.1)",
+            "bookmark_text": "rgba(255, 153, 0, 1)",
+            "toolbar_field": "rgba(26, 32, 41, 1)",
+            "toolbar_field_text": "rgba(255, 255, 255, 1)",
+            "toolbar_field_border_focus": "rgba(255, 153, 0, 1)",
+            "toolbar_highlight_focus": "rgba(255, 153, 0, 1)",
+            "toolbar_top_separator": "rgba(255, 153, 0, 0)",
+            "tab_line": "rgba(255, 153, 0, 1)",
+            "toolbox_vertical_separator": "rgba(255, 153, 0, 1)",
+            "popup_border": "rgba(255, 153, 0, 1)"
+        }
+    }
+}
+
