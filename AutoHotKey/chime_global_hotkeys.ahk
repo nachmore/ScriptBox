@@ -19,6 +19,7 @@ Chime_Toggle_Mute() {
   chime_id := Chime_Get_Meeting_Window(false)
 
   if (chime_id > 0) {
+
     ; remember the currently active window
     WinGet, active_id, ID, A 
 
@@ -53,20 +54,31 @@ Chime_Get_Meeting_Window(ignore_video := true) {
   ; which AHK does not realize are hidden, so:
 
   ; Get all chime windows
-  WinGet, chime_window_list, List, ahk_exe Chime.exe ahk_class i)Chime
+  WinGet, chime_window_list, List, ahk_exe Chime.exe
 
   ; iterate through the windows
   Loop, %chime_window_list%
   {
     cur_id := chime_window_list%A_Index%
 
+    ; Useful for debugging:
+    ;MsgBox, , , %cur_id%,
+
+    WinGetClass, found_class, ahk_id %cur_id%
+
+    ; meeting windows will always have some kind of title, while the hidden extra
+    ; windows will not. Newer clients prepend "Amazon Chime: " to the meeting name
+    WinGetTitle, cur_title, ahk_id %cur_id%
+
+    if (InStr(cur_title, "Amazon Chime: ") == 1) {
+      return cur_id
+    }
+
+    ; fall through for older clients
+
     ; get visible text - the main Chime window (the one that we don't want) will 
     ; have "Chrome Legacy Window"
     WinGetText, found_text, ahk_id %cur_id%
-
-    ; meeting windows will always have some kind of title, while the hidden extra
-    ; windows will not
-    WinGetTitle, cur_title, ahk_id %cur_id%
 
     ; if the window has no found text (== not the main window) and does have a title
     ; (!= hidden window, so likely == meeting window)
