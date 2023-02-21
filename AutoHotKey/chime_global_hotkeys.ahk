@@ -21,7 +21,7 @@ Chime_Toggle_Mute() {
   if (chime_id > 0) {
 
     ; remember the currently active window
-    WinGet, active_id, ID, A 
+    WinGet, active_id, ID, A
 
     ; jump to Chime
     WinActivate, ahk_id %chime_id%
@@ -70,13 +70,13 @@ Chime_Get_Meeting_Window(ignore_video := true) {
     ; windows will not. Newer clients prepend "Amazon Chime: " to the meeting name
     WinGetTitle, cur_title, ahk_id %cur_id%
 
-    if (InStr(cur_title, "Amazon Chime: ") == 1) {
+    if (cur_title <> "Amazon Chime: Meeting Controls" and InStr(cur_title, "Amazon Chime: ") == 1) {
       return cur_id
     }
 
     ; fall through for older clients
 
-    ; get visible text - the main Chime window (the one that we don't want) will 
+    ; get visible text - the main Chime window (the one that we don't want) will
     ; have "Chrome Legacy Window"
     WinGetText, found_text, ahk_id %cur_id%
 
@@ -86,7 +86,7 @@ Chime_Get_Meeting_Window(ignore_video := true) {
     ;       Ctrl+Y works fine on that window as well
     if (found_text == "" and cur_title != "") {
 
-      ; if the window is titled "Video" then it is most likely the popped out Video 
+      ; if the window is titled "Video" then it is most likely the popped out Video
       ; window, so ignore it, unless requested not to
       if (!ignore_video or (ignore_video and cur_title != "Video")) {
         return cur_id
