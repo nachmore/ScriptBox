@@ -3,10 +3,13 @@
 // @namespace    http://nachmore.com/
 // @downloadURL  https://github.com/nachmore/ScriptBox/raw/master/TamperMonkey/windowed_luna.user.js
 // @updateURL    https://github.com/nachmore/ScriptBox/raw/master/TamperMonkey/windowed_luna.user.js
-// @version      0.1
+// @version      0.2
 // @description  Run Luna game streaming in windowed, and not fullscreen, mode
 // @author       Oren Nachman
 // @match        https://*luna.amazon.com/*
+// @match        https://*luna.amazon.ca/*
+// @match        https://*luna.amazon.de/*
+// @match        https://*luna.amazon.co.uk/*
 // @icon         data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>
 // @grant        none
 // ==/UserScript==
