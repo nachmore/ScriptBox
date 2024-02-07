@@ -1,6 +1,6 @@
 ; Script to toggle window chrome, including removing the status bar from powerpoint
 ; windowed presentations (useful for sharing the window in a conf call instead of having to
-; preseent full screen)
+; present full screen)
 
 #SingleInstance, force
 
@@ -19,7 +19,7 @@
   reshow := (flipped_style & WS_CAPTION) == WS_CAPTION
 
   WinSet, Style, %flipped_style% , A
-  
+
   ; Note: When not presenting this will actually hide the ribbon of Powerpoint
   ;       we could work around this by using ControlGet - instead, work around it
   ;       by only calling this when presenting :)
