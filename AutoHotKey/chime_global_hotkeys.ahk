@@ -8,10 +8,21 @@ SetTitleMatchMode, RegEx
 
 ; KEYBD_RegisterHotkey(52, 81, 0, "Chime_Toggle_Mute")
 
+^!t::Chime_Toggle_Video()
 ^!y::Chime_Toggle_Mute()
 ^!u::Chime_Show_Meeting_Window()
 
+Chime_Toggle_Video() {
+  ; Ctrl+Alt+V == Toggle video
+  Chime_Send_Key("{Ctrl Down}{Alt Down}v{Alt Up}{Ctrl Up}")
+}
+
 Chime_Toggle_Mute() {
+  ; Ctrl+Y == Mute
+  Chime_Send_Key("{Ctrl Down}y{Ctrl Up}")
+}
+
+Chime_Send_Key(key) {
 
   ; This hotkey works on the popped out video window, so search for it
   ; immediately (it's actually better when that one is returned because it's
@@ -28,7 +39,7 @@ Chime_Toggle_Mute() {
     sleep 100
 
     ; Ctrl+Y == Mute
-    Send {Ctrl Down}y{Ctrl Up}
+    Send %key%
     sleep 50
 
     ; reactive the previously active window
