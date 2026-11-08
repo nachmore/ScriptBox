@@ -1,0 +1,5 @@
+# Karabiner writes these locally
+automatic_backups/
+# Only track our own rule file; other imported rule packs stay local
+assets/complex_modifications/*
+!assets/complex_modifications/nachmores-keyboard.json
