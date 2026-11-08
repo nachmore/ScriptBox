@@ -51,7 +51,7 @@
       ]
     },
     {
-      "description": "Home/End go to start/end of line in text fields (Shift selects)",
+      "description": "Home/End go to start/end of line; Ctrl+Home/End send the original Home/End (Shift selects)",
       "manipulators": [
         {
           "type": "basic",
@@ -69,12 +69,6 @@
               "modifiers": [
                 "left_command"
               ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "expression_if",
-              "expression": "accessibility.focused_ui_element.role_string like 'AXText*'"
             }
           ]
         },
@@ -95,11 +89,43 @@
                 "left_command"
               ]
             }
-          ],
-          "conditions": [
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "home",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
             {
-              "type": "expression_if",
-              "expression": "accessibility.focused_ui_element.role_string like 'AXText*'"
+              "key_code": "home"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "end",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "end"
             }
           ]
         }

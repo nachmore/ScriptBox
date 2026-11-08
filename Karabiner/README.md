@@ -3,7 +3,7 @@
 Minimal Windows-style keys for macOS:
 
 - **Ctrl+Left/Right** jump by word (Shift selects)
-- **Home/End** go to start/end of line in text fields (Shift selects)
+- **Home/End** go to start/end of line (Shift selects); **Ctrl+Home/End** send the original Mac Home/End
 - **Shift+Insert** pastes
 
 `karabiner.json` is the live config. `assets/complex_modifications/nachmores-keyboard.json` holds the same rules for importing via *Complex Modifications → Add predefined rule*.
