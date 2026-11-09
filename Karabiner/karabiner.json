@@ -120,6 +120,35 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Ctrl+Cmd+Home/PgUp/PgDn: play/pause, previous, next track",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "home",
+                                    "modifiers": { "mandatory": ["control", "command"] }
+                                },
+                                "to": [{ "consumer_key_code": "play_or_pause" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "page_up",
+                                    "modifiers": { "mandatory": ["control", "command"] }
+                                },
+                                "to": [{ "consumer_key_code": "rewind" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "page_down",
+                                    "modifiers": { "mandatory": ["control", "command"] }
+                                },
+                                "to": [{ "consumer_key_code": "fast_forward" }],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
