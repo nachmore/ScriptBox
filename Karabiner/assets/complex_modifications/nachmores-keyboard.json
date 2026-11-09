@@ -51,7 +51,7 @@
       ]
     },
     {
-      "description": "Home/End go to start/end of line; Ctrl+Home/End send the original Home/End (Shift selects)",
+      "description": "Home/End go to start/end of line; Ctrl+Home/End go to start/end of document (Shift selects)",
       "manipulators": [
         {
           "type": "basic",
@@ -106,7 +106,10 @@
           },
           "to": [
             {
-              "key_code": "home"
+              "key_code": "up_arrow",
+              "modifiers": [
+                "left_command"
+              ]
             }
           ]
         },
@@ -125,7 +128,10 @@
           },
           "to": [
             {
-              "key_code": "end"
+              "key_code": "down_arrow",
+              "modifiers": [
+                "left_command"
+              ]
             }
           ]
         }
