@@ -19,4 +19,6 @@ ln -s ~/oss/ScriptBox/Karabiner ~/.config/karabiner
 launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.Karabiner-Console-User-Server
 ```
 
+**Logitech ERGO K860:** kept in Windows mode (fn+P) so Insert works; a device-only swap in `karabiner.json` turns Win/Alt/AltGr back into Option/Cmd/Cmd. Enabling Karabiner on it blocks OpenLogi for that keyboard.
+
 Changes made in Karabiner Settings are written here and show up in `git status`.
