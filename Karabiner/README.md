@@ -7,6 +7,7 @@ Minimal Windows-style keys for macOS:
 - **Shift+Insert** pastes
 - **Ctrl+Cmd+Home / PgUp / PgDn** play/pause, previous track, next track
 - **Win (Option)+Left/Right** tile window to left/right half, **+Up** fills the screen, **+Down** restores (macOS's built-in Fn+Ctrl tiling shortcuts)
+- **Cmd+Left Shift** (tapped alone, either order) toggles between U.S. and Hebrew-PC; cancelled if any other key/click happens, so Cmd+Shift+… shortcuts are unaffected
 
 `karabiner.json` is the live config. `assets/complex_modifications/nachmores-keyboard.json` holds the same rules for importing via *Complex Modifications → Add predefined rule*.
 
