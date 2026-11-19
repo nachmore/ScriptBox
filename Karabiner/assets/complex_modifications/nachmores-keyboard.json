@@ -218,7 +218,7 @@
       ]
     },
     {
-      "description": "Win (Option)+Arrows tile windows: left/right half, Up fills, Down restores",
+      "description": "Win (Option)+Arrows snap windows via Rectangle: left/right half (repeat to move to next display), Up maximizes, Down restores",
       "manipulators": [
         {
           "type": "basic",
@@ -234,8 +234,8 @@
             {
               "key_code": "left_arrow",
               "modifiers": [
-                "fn",
-                "left_control"
+                "left_control",
+                "left_option"
               ]
             }
           ]
@@ -254,8 +254,8 @@
             {
               "key_code": "right_arrow",
               "modifiers": [
-                "fn",
-                "left_control"
+                "left_control",
+                "left_option"
               ]
             }
           ]
@@ -272,10 +272,10 @@
           },
           "to": [
             {
-              "key_code": "f",
+              "key_code": "return_or_enter",
               "modifiers": [
-                "fn",
-                "left_control"
+                "left_control",
+                "left_option"
               ]
             }
           ]
@@ -292,10 +292,10 @@
           },
           "to": [
             {
-              "key_code": "r",
+              "key_code": "delete_or_backspace",
               "modifiers": [
-                "fn",
-                "left_control"
+                "left_control",
+                "left_option"
               ]
             }
           ]

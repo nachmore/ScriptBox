@@ -6,7 +6,7 @@ Minimal Windows-style keys for macOS:
 - **Home/End** go to start/end of line (Shift selects); **Ctrl+Home/End** go to start/end of document
 - **Shift+Insert** pastes
 - **Ctrl+Cmd+Home / PgUp / PgDn** play/pause, previous track, next track
-- **Win (Option)+Left/Right** tile window to left/right half, **+Up** fills the screen, **+Down** restores (macOS's built-in Fn+Ctrl tiling shortcuts)
+- **Win (Option)+Left/Right** snap window to left/right half; press again to move it to the next display. **+Up** maximizes, **+Down** restores. Needs [Rectangle](https://rectangleapp.com) (`brew install --cask rectangle`) with `defaults write com.knollsoft.Rectangle subsequentExecutionMode -int 1`
 - **Cmd+Left Shift** (tapped alone, either order) toggles between U.S. and Hebrew-PC; cancelled if any other key/click happens, so Cmd+Shift+… shortcuts are unaffected
 
 `karabiner.json` is the live config. `assets/complex_modifications/nachmores-keyboard.json` holds the same rules for importing via *Complex Modifications → Add predefined rule*.

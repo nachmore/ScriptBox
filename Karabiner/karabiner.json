@@ -151,7 +151,7 @@
                         ]
                     },
                     {
-                        "description": "Win (Option)+Arrows tile windows: left/right half, Up fills, Down restores",
+                        "description": "Win (Option)+Arrows snap windows via Rectangle: left/right half (repeat to move to next display), Up maximizes, Down restores",
                         "manipulators": [
                             {
                                 "from": {
@@ -161,7 +161,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["fn", "left_control"]
+                                        "modifiers": ["left_control", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -174,7 +174,7 @@
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["fn", "left_control"]
+                                        "modifiers": ["left_control", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -186,8 +186,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f",
-                                        "modifiers": ["fn", "left_control"]
+                                        "key_code": "return_or_enter",
+                                        "modifiers": ["left_control", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -199,8 +199,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "r",
-                                        "modifiers": ["fn", "left_control"]
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": ["left_control", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
